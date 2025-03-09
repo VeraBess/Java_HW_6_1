@@ -47,8 +47,8 @@ public class StatsServiceTest {
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedMin = 8;
-        int actualMin = service.maxSalesInMonth(sales);
+        int expectedMin = 9;
+        int actualMin = service.minSalesInMonth(sales);
 
         Assertions.assertEquals(expectedMin, actualMin);
     }
