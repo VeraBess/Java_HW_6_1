@@ -5,8 +5,8 @@ import org.junit.jupiter.api.Test;
 
 public class StatsServiceTest {
 
-    @Test
-    public void sumSalesAllMonth() {
+    @Test // 1
+    public void sumSalesAllMonth() {  // общая сумма
         StatsService service = new StatsService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -17,8 +17,8 @@ public class StatsServiceTest {
         Assertions.assertEquals(expectedSum, actualSum);
     }
 
-    @Test
-    public void averageSalesInMonth() {
+    @Test // 2
+    public void averageSalesInMonth() { //средняя в месяц
         StatsService service = new StatsService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -29,38 +29,50 @@ public class StatsServiceTest {
         Assertions.assertEquals(expectedAverSum, actualAverSum);
     }
 
-    @Test
-    public void maxSalesInMonth() {
+    @Test // 3
+    public void maxSalesInMonth() { //номер месяца с мах продажами
         StatsService service = new StatsService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        long expectedMax = 8;
-        long actualMax = service.maxSalesInMonth(sales);
+        int expectedMax = 8;
+        int actualMax = service.maxSalesInMonth(sales);
 
         Assertions.assertEquals(expectedMax, actualMax);
     }
 
-    @Test
-    public void sumMonthSalesBelowAverage() {
+    @Test // 4
+    public void minSalesInMonth() { //номер месяца с мин продажами
         StatsService service = new StatsService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        long expectedBelow = 5;
-        long actualBelow = service.salesBelowAverage(sales);
+        int expectedMin = 8;
+        int actualMin = service.maxSalesInMonth(sales);
+
+        Assertions.assertEquals(expectedMin, actualMin);
+    }
+
+    @Test // 5
+    public void sumMonthSalesBelowAverage() { // кол-во месяцев выше среднего
+        StatsService service = new StatsService();
+
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        int expectedBelow = 5;
+        int actualBelow = service.salesAboveAverage(sales);
 
         Assertions.assertEquals(expectedBelow, actualBelow);
     }
 
-    @Test
-    public void sumMonthSalesAboveAverage() {
+    @Test // 6
+    public void sumMonthSalesAboveAverage() { // кол-во месяцев ниже среднего
         StatsService service = new StatsService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        long expectedAbove = 5;
-        long actualAbove = service.salesAboveAverage(sales);
+        int expectedAbove = 5;
+        int actualAbove = service.salesAboveAverage(sales);
 
         Assertions.assertEquals(expectedAbove, actualAbove);
     }

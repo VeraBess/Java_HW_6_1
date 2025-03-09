@@ -16,7 +16,7 @@ public class StatsService {
         return averageMonth;
     }
 
-    public long maxSalesInMonth(long[] sales) { //Номер месяца с максимальными продажами
+    public int maxSalesInMonth(long[] sales) { //Номер месяца с максимальными продажами
         int maxMonth = 0; // переменная для хранения номера месяца
 
         for (int i = 0; i < sales.length; i++) {
@@ -27,7 +27,7 @@ public class StatsService {
         return maxMonth + 1;
     }
 
-    public long minSalesInMonth(long[] sales) { //Номер месяца с минимальными продажами
+    public int minSalesInMonth(long[] sales) { //Номер месяца с минимальными продажами
         int minMonth = 0; // переменная для хранения номера месяца
 
         for (int i = 0; i < sales.length; i++) {
@@ -38,8 +38,8 @@ public class StatsService {
         return minMonth + 1;
     }
 
-    public long salesBelowAverage(long[] sales) { //кол-во месяцев с продажами ниже среднего
-        long monthBelowAverage = 0; //переменная для подсчета кол-ва месяцев
+    public int salesBelowAverage(long[] sales) { //кол-во месяцев с продажами ниже среднего
+        int monthBelowAverage = 0; //переменная для подсчета кол-ва месяцев
 
         for (long s : sales) {
             if (s < averageSalesAmount(sales)) {
@@ -49,8 +49,8 @@ public class StatsService {
         return monthBelowAverage;
     }
 
-    public long salesAboveAverage(long[] sales) { //кол-во месяцев с продажами выше среднего
-        long monthAboveAverage = 0; //переменная для подсчета кол-ва месяцев
+    public int salesAboveAverage(long[] sales) { //кол-во месяцев с продажами выше среднего
+        int monthAboveAverage = 0; //переменная для подсчета кол-ва месяцев
 
         for (long s : sales) {
             if (s > averageSalesAmount(sales)) {
